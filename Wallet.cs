@@ -27,5 +27,9 @@ namespace LemonadeStand_3DayStarter
         {
             money -= transactionAmount;
         }
+        public void CheckMoney()
+        {
+            Console.WriteLine("You have $" + money );
+        }
     }
 }

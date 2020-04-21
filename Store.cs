@@ -10,7 +10,7 @@ namespace LemonadeStand_3DayStarter
     {
         // member variables (HAS A)
         private double pricePerLemon;
-        private double pricePerSugarCube;
+        private double pricePerCupOfSugar;
         private double pricePerIceCube;
         private double pricePerCup;
 
@@ -18,10 +18,40 @@ namespace LemonadeStand_3DayStarter
         public Store()
         {
             pricePerLemon = .5;
-            pricePerSugarCube = .1;
+            pricePerCupOfSugar = .1;
             pricePerIceCube = .01;
             pricePerCup = .25;
-        }        
+        }
+        public void StoreMenu(Player player1)
+        {
+            
+            Console.WriteLine("Welcome to the Store!");
+            Console.WriteLine("What would you like to purchase?\n1)Lemons\n2)Sugar\n3)Cups\n4)Ice");
+            string userInput = Console.ReadLine();
+            switch (userInput)
+            {
+                case "1":
+                    //Purchase Lemons
+                    SellLemons(player1);
+                    break;
+                case "2":
+                    //Purchase Sugar 
+                    SellCupsOfSugar(player1);
+                    break;
+                case "3":
+                    //Purchase Cups
+                    SellCups(player1);
+                    break;
+                case "4":
+                    //Purchase Ice
+                    SellIceCubes(player1);
+                    break;
+                default:
+                    Console.WriteLine("Invalid Input");
+                    StoreMenu(player1);
+                    break;
+            }
+        }
         // member methods (CAN DO)
         public void SellLemons(Player player) 
         {
@@ -34,14 +64,14 @@ namespace LemonadeStand_3DayStarter
             }
         }
 
-        public void SellSugarCubes(Player player)
+        public void SellCupsOfSugar(Player player)
         {
-            int sugarToPurchase = UserInterface.GetNumberOfItems("sugar");
-            double transactionAmount = CalculateTransactionAmount(sugarToPurchase, pricePerSugarCube);
+            int sugarToPurchase = UserInterface.GetNumberOfItems("cups of sugar");
+            double transactionAmount = CalculateTransactionAmount(sugarToPurchase, pricePerCupOfSugar);
             if(player.wallet.Money >= transactionAmount)
             {
                 PerformTransaction(player.wallet, transactionAmount);
-                player.inventory.AddSugarCubesToInventory(sugarToPurchase);
+                player.inventory.AddCupsOfSugarToInventory(sugarToPurchase);
             }
         }
 

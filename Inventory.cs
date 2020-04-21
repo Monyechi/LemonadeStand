@@ -10,7 +10,7 @@ namespace LemonadeStand_3DayStarter
     {
         // member variables (HAS A)
         public List<Lemon> lemons;
-        public List<SugarCube> sugarCubes;
+        public List<CupOfSugar> cupsOfSugar;
         public List<IceCube> iceCubes;
         public List<Cup> cups;
 
@@ -18,7 +18,7 @@ namespace LemonadeStand_3DayStarter
         public Inventory()
         {
             lemons = new List<Lemon>();
-            sugarCubes = new List<SugarCube>();
+            cupsOfSugar = new List<CupOfSugar>();
             iceCubes = new List<IceCube>();
             cups = new List<Cup>();
         }
@@ -33,13 +33,35 @@ namespace LemonadeStand_3DayStarter
             }
         }
 
-        public void AddSugarCubesToInventory(int numberOfSugarCubes)
+        public void AddCupsOfSugarToInventory(int numberOfCupsOfSugar)
         {
-            for(int i = 0; i < numberOfSugarCubes; i++)
+            for(int i = 0; i < numberOfCupsOfSugar; i++)
             {
-                SugarCube sugarCube = new SugarCube();
-                sugarCubes.Add(sugarCube);
+                CupOfSugar CupOfSugar = new CupOfSugar();
+                cupsOfSugar.Add(CupOfSugar);
             }
+        }
+
+        public void CheckInventory(Player player)
+        {
+
+            player.wallet.CheckMoney();
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("You have:");
+            Console.WriteLine(player.inventory.lemons.Count + " Lemons");
+            Console.WriteLine("");            
+            Console.WriteLine(player.inventory.cupsOfSugar.Count + " Cups of Sugar");
+            Console.WriteLine("");
+            Console.WriteLine(player.inventory.iceCubes.Count + " Ice Cubes");
+            Console.WriteLine("");
+            Console.WriteLine(player.inventory.cups.Count + " Cups");
+            Console.WriteLine("");
+            Console.WriteLine("Press Enter to return to the menu.");
+            Console.ReadLine();
+
+            
+
         }
 
         public void AddIceCubesToInventory(int numberOfIceCubes)

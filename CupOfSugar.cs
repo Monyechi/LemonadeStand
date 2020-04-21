@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand_3DayStarter
 {
-    class SugarCube : Item
+    class CupOfSugar : Item
     {
         // member variables (HAS A)
 
         // constructor (SPAWNER)
-        public SugarCube()
+        public CupOfSugar()
         {
-            name = "sugar cube";
+            name = "cup of sugar";
         }
 
         // member methods (CAN DO)
