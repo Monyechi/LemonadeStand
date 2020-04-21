@@ -23,9 +23,10 @@ namespace LemonadeStand_3DayStarter
             pricePerCup = .25;
         }
         public void StoreMenu(Player player)
-        {            
+        {
+            Console.Clear();            
             Console.WriteLine("Welcome to the Store!");
-            Console.WriteLine("What would you like to purchase?\n1)Lemons\n2)Sugar\n3)Cups\n4)Ice\n5)Return to menu");
+            Console.WriteLine("What would you like to purchase?\n1) Lemons\n2) Sugar\n3) Cups\n4) Ice\n5) Check inventory\n6) Return to Main Menu");
             string userInput = Console.ReadLine();
             switch (userInput)
             {
@@ -49,8 +50,13 @@ namespace LemonadeStand_3DayStarter
                     SellIceCubes(player);
                     StoreMenu(player);
                     break;
-                case "5":   
-                    
+                case "5":
+                    player.inventory.CheckInventory(player);
+                    StoreMenu(player);
+                    //Return to main menu                    
+                    break;
+                case "6":
+                   
                     //Return to main menu                    
                     break;
                 default:

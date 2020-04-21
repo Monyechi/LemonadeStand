@@ -44,7 +44,7 @@ namespace LemonadeStand_3DayStarter
 
         public void CheckInventory(Player player)
         {
-
+            Console.Clear();
             player.wallet.CheckMoney();     
             Console.WriteLine("");
             Console.WriteLine("Your inventory has:");

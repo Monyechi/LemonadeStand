@@ -21,8 +21,9 @@ namespace LemonadeStand_3DayStarter
         }
         public void MainMenu()
         {
+            Console.Clear();
             Store store = new Store();
-            Console.WriteLine("Please select what you would like to do.\n1) Go to Store\n2) Set Recipe\n3)Check Inventory\n4)Start Day");
+            Console.WriteLine("Please select what you would like to do.\n1) Go to Store\n2) Set Recipe\n3) Check Inventory\n4) Start Day");
             string userInput = Console.ReadLine();
             switch (userInput)
             {
