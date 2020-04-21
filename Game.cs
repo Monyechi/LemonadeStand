@@ -29,7 +29,7 @@ namespace LemonadeStand_3DayStarter
             {
                 case "1":
                     //call store menu
-                    store.StoreMenu();
+                    StoreMenu();
                     break;
                 case "2":
                     //set recipe
@@ -55,6 +55,37 @@ namespace LemonadeStand_3DayStarter
         public void PurchaseItem()
         {
             
+        }
+        public void StoreMenu()
+        {
+            Store store = new Store();
+
+            Console.WriteLine("Welcome to the Store!");
+            Console.WriteLine("What would you like to purchase?\n1) Purchase More Lemons\n2) Purchase More Sugar Cubes\n3)Purchase More Cups\n4)Purchase More Ice");
+            string userInput = Console.ReadLine();
+            switch (userInput)
+            {
+                case "1":
+                    //Purchase Lemons
+                    store.SellLemons(player1);
+                    break;
+                case "2":
+                    //Purchase Sugar 
+                    store.SellSugarCubes(player1);
+                    break;
+                case "3":
+                    //Purchase Cups
+                    store.SellCups(player1);
+                    break;
+                case "4":
+                    //Purchase Ice
+                    store.SellIceCubes(player1);
+                    break;
+                default:
+                    Console.WriteLine("Invalid Input");
+                    Menu();
+                    break;
+            }
         }
 
     }

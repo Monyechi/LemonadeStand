@@ -21,34 +21,7 @@ namespace LemonadeStand_3DayStarter
             pricePerSugarCube = .1;
             pricePerIceCube = .01;
             pricePerCup = .25;
-        }
-
-        public void StoreMenu()
-        {
-            Console.WriteLine("Welcome to the Store!");
-            Console.WriteLine("What would you like to purchase?\n1) Purchase Lemons\n2) Purchase Sugar Cubes\n3)Purchase Cups\n4)Purchase Ice");
-            string userInput = Console.ReadLine();
-            switch (userInput)
-            {
-                case "1":
-                    //Purchase Lemons
-                    SellLemons();
-                    break;
-                case "2":
-                    //set recipe
-                    break;
-                case "3":
-                    //check inventory
-                    CheckInventory();
-                    break;
-                case "4":
-                //start day
-                default:
-                    Console.WriteLine("Invalid Input");
-                    Menu();
-                    break;
-            }
-        }
+        }        
         // member methods (CAN DO)
         public void SellLemons(Player player) 
         {
