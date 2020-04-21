@@ -17,10 +17,9 @@ namespace LemonadeStand_3DayStarter
         }
         public void RunGame() //Master Method
         {
-            Menu();
+            MainMenu();
         }
-
-        public void Menu()
+        public void MainMenu()
         {
             Store store = new Store();
             Console.WriteLine("Please select what you would like to do.\n1) Go to Store\n2) Set Recipe\n3)Check Inventory\n4)Start Day");
@@ -30,30 +29,29 @@ namespace LemonadeStand_3DayStarter
                 case "1":
                     //call store menu
                     store.StoreMenu(player1);
+                    MainMenu();
                     break;
                 case "2":
                     //set recipe
                     player1.recipe.SetRecipe();
-                    Menu();
+                    MainMenu();
                     break;
                 case "3":
                     //check inventory
                     player1.inventory.CheckInventory(player1);
-                    Menu();
+                    MainMenu();
                     break;
                 case "4":
                     //start day
-                    Menu();
+
+                    MainMenu();
                     break;
                 default:
                     Console.WriteLine("Invalid Input");
-                    Menu();
+                    MainMenu();
                     break;
             }
         }
-        
-     
-       
 
     }
 }

@@ -12,6 +12,7 @@ namespace LemonadeStand_3DayStarter
         public Inventory inventory;
         public Wallet wallet;
         public Recipe recipe;
+        
 
         // constructor (SPAWNER)
         public Player()
@@ -19,8 +20,8 @@ namespace LemonadeStand_3DayStarter
             inventory = new Inventory();
             wallet = new Wallet();
             recipe = new Recipe();
-        }
-
-        // member methods (CAN DO)
+        }  // member methods (CAN DO)
+        
     }
+
 }
