@@ -9,14 +9,19 @@ namespace LemonadeStand_3DayStarter
     class Customer
     {
         // member variables (HAS A)
-        public List<string> names;
-        public string name;
+        
+        
         // constructor (SPAWNER)
         public Customer()
         {
-            
+             
         }
-
         // member methods (CAN DO)
+        public bool BuysLemonade(Weather weather, Recipe recipe)
+        {
+            
+           
+
+        }
     }
 }

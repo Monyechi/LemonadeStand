@@ -10,46 +10,51 @@ namespace LemonadeStand_3DayStarter
     {
         //Member variables (HAS A) 
         public Player player1;
-        
+        List<Day> days;
         public Game()
         {
             player1 = new Player();
+            days = new List<Day>() { new Day(), new Day(), new Day(), new Day(), new Day(), new Day(), new Day() };
         }
         public void RunGame() //Master Method
         {
-            MainMenu();
+            foreach(Day day in days)
+            {
+                MainMenu(day);
+            }
+            
         }
-        public void MainMenu()
+        public void MainMenu(Day day)
         {
             Console.Clear();
             Store store = new Store();
-            Console.WriteLine("Please select what you would like to do.\n1) Go to Store\n2) Set Recipe\n3) Check Inventory\n4) Start Day");
+            Console.WriteLine("Please select what you would like to do.\n1) Go to Store\n2) Set Recipe\n3) Check Inventory\n4) Check Recipe\n5) Start Day");
             string userInput = Console.ReadLine();
             switch (userInput)
             {
                 case "1":
                     //call store menu
                     store.StoreMenu(player1);
-                    MainMenu();
                     break;
                 case "2":
                     //set recipe
                     player1.recipe.SetRecipe();
-                    MainMenu();
                     break;
                 case "3":
                     //check inventory
                     player1.inventory.CheckInventory(player1);
-                    MainMenu();
                     break;
                 case "4":
+                    //check recipe
+                    player1.recipe.CheckRecipe();
+                    break;
+                case "5":
                     //start day
-
-                    MainMenu();
+                    //day.StartDay();
                     break;
                 default:
                     Console.WriteLine("Invalid Input");
-                    MainMenu();
+                    MainMenu(day);
                     break;
             }
         }

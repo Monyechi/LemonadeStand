@@ -15,21 +15,34 @@ namespace LemonadeStand_3DayStarter
        
         public void SetRecipe()
         {
-            Console.WriteLine("Please enter price per Cup:");
-            Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Please enter price per Cup:");           
             pricePerCup = double.Parse(Console.ReadLine());
             Console.WriteLine("");
             Console.WriteLine("Please enter amount of Lemons per Pitcher");
-            Console.ReadLine();
             lemonsPerPitcher = int.Parse(Console.ReadLine());
             Console.WriteLine("");
             Console.WriteLine("Please enter amount of Suger per Pitcher");
-            Console.ReadLine();
             sugerPerPitcher = int.Parse(Console.ReadLine());
             Console.WriteLine("");
             Console.WriteLine("Please enter amount of Ice per Cup");
             icePerCup = int.Parse(Console.ReadLine());
 
+        }
+        public void CheckRecipe()
+        {
+            Console.Clear();
+            Console.WriteLine("Price Per Cup: " + pricePerCup);
+            Console.WriteLine("");
+            Console.WriteLine("Lemons Per Pitcher: " + lemonsPerPitcher);
+            Console.WriteLine("");
+            Console.WriteLine("Cups of Suger Per Pitcher " + sugerPerPitcher);
+            Console.WriteLine("");
+            Console.WriteLine("Ice Per Cup " + icePerCup);
+            Console.WriteLine("");
+            Console.WriteLine("Press Enter To Return To Menu.");
+            Console.ReadLine();
+           
         }
 
     }
