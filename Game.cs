@@ -56,7 +56,11 @@ namespace LemonadeStand_3DayStarter
                     Console.WriteLine("Invalid Input");
                     MainMenu(day);
                     break;
-            }
+            }           
+        }
+        public void BeginDay()
+        {
+            days[0]{ }
         }
 
     }

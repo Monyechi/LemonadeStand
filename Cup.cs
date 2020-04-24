@@ -9,6 +9,7 @@ namespace LemonadeStand_3DayStarter
     class Cup : Item
     {
         // member variables (HAS A)
+        public int icePerCup;
 
         // constructor (SPAWNER)
         public Cup()

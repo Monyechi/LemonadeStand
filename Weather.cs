@@ -12,33 +12,32 @@ namespace LemonadeStand_3DayStarter
         public string condition;
         public int temperature;
         private List<string> weatherConditions;
-        Random rnd = new Random();
+        
 
         // constructor (SPAWNER)
         public Weather()
         {
+            Random rnd = new Random();
+
             weatherConditions = new List<string>();
             weatherConditions.Add("Sunny");
             weatherConditions.Add("Rainy");
             weatherConditions.Add("Cloudy");
-            CurrentCondition();
+            CurrentCondition(rnd);
             CurrentTemperature();
         }
 
         // member methods (CAN DO)
-        public int RandomNumber(Random random)
+       
+        public void CurrentCondition(Random random)
         {
-            int numberGenerated = random.Next(1, 3);
-            return numberGenerated;            
-        }
-        public void CurrentCondition()
-        {
-           
-            int i = RandomNumber(rnd);
+            int numberGenerated = random.Next(1, 3);            
+            int i = numberGenerated;
             condition = weatherConditions[i];          
         }
         public void CurrentTemperature()
         {
+            Random rnd = new Random();
             temperature = rnd.Next(60, 94);
                         
         }
